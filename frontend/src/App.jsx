@@ -91,6 +91,9 @@ function App() {
       if (!response.ok) {
         throw new Error("Backend analysis failed.");
       }
+      else {
+        console.log("Done");
+      }
 
       const data = await response.json();
 
