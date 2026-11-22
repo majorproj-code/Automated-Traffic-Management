@@ -14,8 +14,8 @@ coverage
 *.local
 
 # Local environment variables
-.env
 .env.*
+!.env
 !.env.example
 
 # Editor directories and files
