@@ -83,6 +83,7 @@ function App() {
       });
 
       const response = await fetch(
+        // "http://localhost:8000/api/analyze",
         `${API}/api/analyze`,
         {
           method: "POST",
