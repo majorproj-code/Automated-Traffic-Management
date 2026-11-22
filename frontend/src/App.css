@@ -275,35 +275,45 @@ table {
   margin-top: 20px;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 16px;
   border-bottom: 1px solid #293c55;
+  font-size: 13px;
 }
 
 th {
   color: #38bdf8;
-  font-size: 13px;
-}
-
-td {
-  font-size: 13px;
 }
 
 .signal {
-  padding: 6px 13px;
-  border-radius: 20px;
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
+  padding: 5px 12px;
+  border-radius: 999px;
   font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-.signal.GREEN {
-  background: #064e3b;
+.signal.green {
+  background: rgba(34, 197, 94, 0.100);
   color: #4ade80;
+  border: 1px solid #22c55e;
 }
 
-.signal.RED {
-  background: #7f1d1d;
+.signal.red {
+  background: rgba(239, 68, 68, 0.100);
   color: #fca5a5;
+  border: 1px solid #ef4444;
+}
+
+.signal.pending {
+  background: rgba(148, 163, 184, 0.12);
+  color: #94a3b8;
+  border: 1px solid #475569;
 }
 
 

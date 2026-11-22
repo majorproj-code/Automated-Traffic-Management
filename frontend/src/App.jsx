@@ -334,17 +334,13 @@ function App() {
         {/* TRAFFIC ANALYSIS */}
 
         <section className="panel">
-
           <h2>Traffic Analysis Results</h2>
-
           <p className="subtitle">
             Vehicle detection and congestion information.
           </p>
 
           <div className="table-container">
-
             <table>
-
               <thead>
                 <tr>
                   <th>Road</th>
@@ -354,53 +350,32 @@ function App() {
               </thead>
 
               <tbody>
-
                 {signals.map((item) => {
-
-                  // Check whether this road is in green_roads
-                  const isGreen = results?.green_roads?.some(
-                    (road) =>
-                      road.toLowerCase() === item.road.toLowerCase()
-                  );
+                  const roadKey = item.road.toLowerCase().replace(/\s+/g, "");
 
                   const signal = !results
                     ? "PENDING"
-                    : isGreen
-                      ? "GREEN"
-                      : "RED";
+                    : results?.signals?.[roadKey] || "RED";
+
+                  const vehicleCount = results
+                    ? results?.vehicle_counts?.[roadKey] ?? item.count
+                    : "--";
 
                   return (
-
                     <tr key={item.road}>
-
                       <td>{item.road.toUpperCase()}</td>
-
+                      <td>{vehicleCount}</td>
                       <td>
-                        {results ? item.count : "--"}
-                      </td>
-
-                      <td>
-
-                        <span
-                          className={`signal ${signal.toLowerCase()}`}
-                        >
+                        <span className={`signal ${signal.toLowerCase()}`}>
                           {signal}
                         </span>
-
                       </td>
-
                     </tr>
-
                   );
-
                 })}
-
               </tbody>
-
             </table>
-
           </div>
-
         </section>
 
 
