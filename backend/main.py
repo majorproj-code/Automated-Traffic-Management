@@ -78,7 +78,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 MODEL_PATH = (
     BASE_DIR.parent
-    / "AI_Model"
+    / "ai_model"
     / "runs"
     / "detect"
     / "train-2"
