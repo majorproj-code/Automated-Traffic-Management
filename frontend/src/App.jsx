@@ -13,6 +13,9 @@ import {
 
 import "./App.css";
 
+const API = import.meta.env.API_URL;
+
+
 function App() {
 
   const [images, setImages] = useState(
@@ -80,9 +83,7 @@ function App() {
       });
 
       const response = await fetch(
-        "https://automated-traffic-management.onrender.com/api/analyze",
-        // "https://anti-eden-virtue-boss.trycloudflare.com/api/analyze",
-        // "http://127.0.0.1:8000/api/analyze",
+        `${API}/analyze`,
         {
           method: "POST",
           body: formData
