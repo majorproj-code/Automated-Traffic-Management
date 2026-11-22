@@ -80,7 +80,8 @@ function App() {
       });
 
       const response = await fetch(
-        "https://anti-eden-virtue-boss.trycloudflare.com/api/analyze",
+        "https://automated-traffic-management.onrender.com/api/analyze"
+        // "https://anti-eden-virtue-boss.trycloudflare.com/api/analyze",
         // "http://127.0.0.1:8000/api/analyze",
         {
           method: "POST",
