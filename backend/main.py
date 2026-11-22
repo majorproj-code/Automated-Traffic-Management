@@ -1,3 +1,6 @@
+import json
+import os
+
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -30,9 +33,17 @@ app = FastAPI(
 
 BASE_DIR = Path(__file__).resolve().parent
 
-cred = credentials.Certificate(
-    str(BASE_DIR / "firebase-service-account.json")
-)
+firebase_creds_env = os.getenv("FIREBASE_CREDENTIALS")
+
+if firebase_creds_env:
+    # Load credentials from environment variable (Render / Cloud)
+    cred_dict = json.loads(firebase_creds_env)
+    cred = credentials.Certificate(cred_dict)
+else:
+    # Fallback to local JSON file during local development
+    cred = credentials.Certificate(
+        str(BASE_DIR / "firebase-service-account.json")
+    )
 
 firebase_admin.initialize_app(
     cred,
