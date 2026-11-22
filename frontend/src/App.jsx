@@ -13,7 +13,7 @@ import {
 
 import "./App.css";
 
-const API = import.meta.env.API_URL;
+const API = import.meta.env.VITE_API_URL;
 
 
 function App() {
