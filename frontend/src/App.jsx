@@ -83,7 +83,7 @@ function App() {
       });
 
       const response = await fetch(
-        `${API}/analyze`,
+        `${API}/api/analyze`,
         {
           method: "POST",
           body: formData
