@@ -48,7 +48,7 @@ else:
 firebase_admin.initialize_app(
     cred,
     {
-        "databaseURL": "https://ai-smart-traffic-e782a-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        "databaseURL": "https://automated-traffic-manage-3cdc9-default-rtdb.firebaseio.com/"
     }
 )
 
